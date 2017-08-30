@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <title>Student Details</title>
+    <link rel="stylesheet" type="text/css"
+          href="../../static/css/styles.css"
+          th:href="@{css/styles.css}"/>
+
+</head>
+<body>
+<div class="container">
+
+
+    <h1>Details</h1>
+    <p th:text="'ID: ' + ${stu.studentId}"/>
+    <p th:text="'First Name: ' + ${stu.firstName}"/>
+    <p th:text="'LastName: ' + ${stu.lastName}"/>
+    <p th:text="'Enrollment Date: ' + ${#dates.format(stu.enrollmentDate, 'dd-MM-yyyy')}"/>
+    <p th:text="'CPR: ' + ${stu.cpr}"/>
+
+    <h2>Enrollments</h2>
+    <h3>New Enrollment</h3>
+    <form action="#" th:action="@{/enroll}" th:object="${enrollment}" method="post"> <!-- https://www.w3schools.com/tags/tag_form.asp -->
+        <!-- https://www.w3schools.com/tags/tag_select.asp -->
+        <select>
+            <option value="SWD1">Software Design 1</option>
+            <option value="SWD2">Software Design 2</option>
+            <option value="SWC1">Software Construction 1</option>
+            <option value="SWC2">Software Construction 2</option>
+        </select>
+
+        <p><input type="submit" class="btn btn-create" value="Add" /></p>
+    </form>
+    <p><a href="/" class="btn btn-create">Create</a></p>
+    <p> title - grade - Teacher - start and stop date</p>
+    <p> title - grade - Teacher - start and stop date</p>
+    <p> title - grade - Teacher - start and stop date</p>
+</div>
+</body>
+</html>
